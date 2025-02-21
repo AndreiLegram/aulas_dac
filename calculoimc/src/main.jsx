@@ -7,7 +7,6 @@ import TabelaImc from './components/TabelaImc.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CalculoImc />
-    <br/>
     <TabelaImc />
   </StrictMode>,
 )

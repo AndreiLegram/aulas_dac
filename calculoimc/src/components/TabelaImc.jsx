@@ -1,12 +1,6 @@
-import React from 'react';
-export default class TabelaImc extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            weight: 75,
-            height: 1.65,
-        };
-    }
+import React, { Component } from 'react';
+
+export default class TabelaImc extends Component {
     render() {
         return (
             <table>
@@ -22,24 +16,24 @@ export default class TabelaImc extends React.Component {
                         <td>Abaixo de 18,5</td>
                     </tr>
                     <tr>
-                        <td>Abaixo do Peso</td>
-                        <td>Abaixo de 18,5</td>
+                        <td>Peso Normal</td>
+                        <td>Entre 18,5 e 24,9</td>
                     </tr>
                     <tr>
-                        <td>Abaixo do Peso</td>
-                        <td>Abaixo de 18,5</td>
+                        <td>Sobrepeso</td>
+                        <td>Entre 25 e 29,9</td>
                     </tr>
                     <tr>
-                        <td>Abaixo do Peso</td>
-                        <td>Abaixo de 18,5</td>
+                        <td>Obesidade Grau I</td>
+                        <td>Entre 30 e 34,9</td>
                     </tr>
                     <tr>
-                        <td>Abaixo do Peso</td>
-                        <td>Abaixo de 18,5</td>
+                        <td>Obesidade Grau II</td>
+                        <td>Entre 35 e 39,9</td>
                     </tr>
                     <tr>
-                        <td>Abaixo do Peso</td>
-                        <td>Abaixo de 18,5</td>
+                        <td>Obesidade Grau III</td>
+                        <td>Acima de 40</td>
                     </tr>
                 </tbody>
             </table>

@@ -1,36 +1,68 @@
-import React from 'react';
-export default class CalculoImc extends React.Component {
+import React, { Component } from 'react';
+
+export default class CalculoImc extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            weight: 75,
-            height: 1.65,
+            peso: '',
+            altura: '',
+            imc: null,
         };
     }
-    handleSubmit = (event) => {
-        console.log("nigger");
-        let nam = event.target.weight;
-        let val = event.target.height;
-        this.setState({ [nam]: val });
+
+    handlePesoChange = (event) => {
+        this.setState({ peso: event.target.value });
+    };
+
+    handleAlturaChange = (event) => {
+        this.setState({ altura: event.target.value });
+    };
+
+    calcularIMC = () => {
+        const { peso, altura } = this.state;
+        const pesoNum = parseFloat(peso);
+        const alturaNum = parseFloat(altura);
+
+        if (isNaN(pesoNum) || isNaN(alturaNum) || alturaNum <= 0) {
+            alert('Por favor, insira valores válidos para peso e altura.');
+            return;
+        }
+
+        const alturaMetros = alturaNum / 100;
+        const imcCalculado = pesoNum / (alturaMetros * alturaMetros);
+        this.setState({ imc: imcCalculado.toFixed(2) });
     }
+
     render() {
+        const { peso, altura, imc } = this.state;
+
         return (
             <>
                 <h3>Cálculo IMC</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>Peso: </label>
-                        <input type='number' name='weight' />
-                    </div>
-                    <div>
-                        <label>Altura: </label>
-                        <input type='number' name='height' />
-                    </div>
-                    <input type="submit" value="Calcular" />
-                </form>
-                <br/>
-                <label>Resultado: </label><span></span>
-                <br/>
+                <div>
+                    <label>
+                        Peso (kg): <input
+                            type="number"
+                            value={peso}
+                            onChange={this.handlePesoChange}
+                        />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Altura (cm): <input
+                            type="number"
+                            value={altura}
+                            onChange={this.handleAlturaChange}
+                        />
+                    </label>
+                </div>
+                <div style={{marginTop: "10px"}}>
+                    <button onClick={this.calcularIMC}>Calcular</button>
+                </div>
+                <div>
+                    <h4>Resultado: {imc}</h4>
+                </div>
             </>
         );
     }

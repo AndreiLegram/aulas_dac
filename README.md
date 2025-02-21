@@ -1,6 +1,4 @@
 # aulas_dac
-
-# aulas_dac
 Aulas de Desenvolvimento de Aplicações Corporativas.
 
 #### Links:
@@ -9,6 +7,7 @@ Aulas de Desenvolvimento de Aplicações Corporativas.
 - [Aulas PPPI](https://github.com/AndreiLegram/aulas_pppi)
 - [Aulas DS](https://github.com/AndreiLegram/aulas_ds)
 - [Aulas DIW](https://github.com/AndreiLegram/aulas_diw)
+- [Aulas PDM](https://github.com/AndreiLegram/aulas_pdm)
 
 #### Created by:
 
