@@ -1,0 +1,2 @@
+### Teste da rota GET /dashboard
+GET http://localhost:3000/dashboard
